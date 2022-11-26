@@ -3,16 +3,16 @@ package shop.algebras
 import shop.domain.Cart.Quantity
 import shop.domain.Item.ItemId
 import shop.domain.auth.UserId
-import shop.domain.order.{Order, OrderId, PaymentId}
+import shop.domain.order.{ Order, OrderId, PaymentId }
 import squants.market.Money
 
 trait Orders[F[_]] {
   def get(userId: UserId, orderId: OrderId): F[Option[Order]]
   def findBy(userId: UserId): F[List[Order]]
   def create(
-    userId: UserId,
-    paymentId: PaymentId,
-    items: Map[ItemId, Quantity],
-    total: Money
+      userId: UserId,
+      paymentId: PaymentId,
+      items: Map[ItemId, Quantity],
+      total: Money
   ): F[OrderId]
 }
