@@ -1,6 +1,6 @@
 package shop.algebras
 
-import shop.domain.auth.{Password, User, UserId, UserName}
+import shop.domain.auth.{ Password, User, UserId, UserName }
 
 trait Users[F[_]] {
   def find(username: UserName, password: Password): F[Option[User]]
