@@ -1,7 +1,9 @@
-import Brand.{Brand, BrandName}
-import Item.{CreateItem, Item, ItemId, UpdateItem}
+package shop.algebras
 
-trait Items [F[_]] {
+import shop.domain.Brand.BrandName
+import shop.domain.Item.{ CreateItem, Item, ItemId, UpdateItem }
+
+trait Items[F[_]] {
   def findAll: F[List[Item]]
   def findBy(brand: BrandName): F[List[Item]]
   def findById(id: ItemId): F[Option[Item]]

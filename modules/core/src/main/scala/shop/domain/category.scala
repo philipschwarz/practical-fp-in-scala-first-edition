@@ -1,3 +1,5 @@
+package shop.domain
+
 import io.estatico.newtype.macros.newtype
 
 import java.util.UUID

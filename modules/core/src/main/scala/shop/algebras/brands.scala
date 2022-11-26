@@ -1,6 +1,8 @@
-import Brand.{Brand, BrandName}
+package shop.algebras
 
-trait Brands[F[_]]{
+import shop.domain.Brand.{ Brand, BrandName }
+
+trait Brands[F[_]] {
   def findAll: F[List[Brand]]
   def create(name: BrandName): F[Unit]
 }
