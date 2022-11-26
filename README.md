@@ -1,1 +1,1 @@
-code entered while following along the first edition of Gabriele Volpe's [book](https://github.com/gvolpe/pfps-shopping-cart): [Practical FP in Scala: A hands-on approach](https://www.goodreads.com/en/book/show/48641932-practical-fp-in-scala) 
+Code entered while following along the first edition of [Gabriele Volpe](https://github.com/gvolpe)'s [book](https://github.com/gvolpe/pfps-shopping-cart): [Practical FP in Scala: A hands-on approach](https://www.goodreads.com/en/book/show/48641932-practical-fp-in-scala) 
