@@ -1,8 +1,7 @@
 package shop.algebras
 
-import shop.domain.cart.Quantity
-import shop.domain.item.ItemId
 import shop.domain.auth.UserId
+import shop.domain.cart.CartItem
 import shop.domain.order.{ Order, OrderId, PaymentId }
 import squants.market.Money
 
@@ -12,7 +11,7 @@ trait Orders[F[_]] {
   def create(
       userId: UserId,
       paymentId: PaymentId,
-      items: Map[ItemId, Quantity],
+      items: List[CartItem],
       total: Money
   ): F[OrderId]
 }
