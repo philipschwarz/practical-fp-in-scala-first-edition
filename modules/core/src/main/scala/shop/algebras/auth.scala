@@ -1,11 +1,6 @@
 package shop.algebras
 
-import shop.domain.auth.{ JwtToken, Password, User, UserId, UserName }
-
-trait Users[F[_]] {
-  def find(username: UserName, password: Password): F[Option[User]]
-  def create(userName: UserName, password: Password): F[Option[UserId]]
-}
+import shop.domain.auth.{JwtToken, Password, User, UserName}
 
 trait Auth[F[_]] {
   def findUser(token: JwtToken): F[Option[User]]
