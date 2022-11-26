@@ -1,12 +1,12 @@
 package shop.domain
 
-import Item.{ Item, ItemId }
+import item.{ Item, ItemId }
 import io.estatico.newtype.macros.newtype
 import squants.market.Money
 
 import java.util.UUID
 
-object Cart {
+object cart {
 
   @newtype case class Quantity(value: Int)
   @newtype case class Cart(items: Map[ItemId, Quantity])

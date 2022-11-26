@@ -4,7 +4,7 @@ import io.estatico.newtype.macros.newtype
 
 import java.util.UUID
 
-object Brand {
+object brand {
 
   @newtype case class BrandId(value: UUID)
 

@@ -1,13 +1,13 @@
 package shop.domain
 
 import io.estatico.newtype.macros.newtype
-import shop.domain.Brand.{ Brand, BrandId }
-import shop.domain.Category.{ Category, CategoryId }
+import shop.domain.brand.{ Brand, BrandId }
+import shop.domain.category.{ Category, CategoryId }
 import squants.market.Money
 
 import java.util.UUID
 
-object Item {
+object item {
 
   @newtype case class ItemId(value: UUID)
   @newtype case class ItemName(value: String)

@@ -1,6 +1,6 @@
 package shop.algebras
 
-import shop.domain.Brand.{ Brand, BrandName }
+import shop.domain.brand.{ Brand, BrandName }
 
 trait Brands[F[_]] {
   def findAll: F[List[Brand]]

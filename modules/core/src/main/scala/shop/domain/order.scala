@@ -1,8 +1,8 @@
 package shop.domain
 
 import io.estatico.newtype.macros.newtype
-import shop.domain.Cart.Quantity
-import shop.domain.Item.ItemId
+import shop.domain.cart.Quantity
+import shop.domain.item.ItemId
 import squants.market.Money
 
 import java.util.UUID
