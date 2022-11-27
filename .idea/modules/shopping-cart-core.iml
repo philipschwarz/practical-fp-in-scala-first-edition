@@ -7,7 +7,6 @@
     <content url="file://$MODULE_DIR$/../../modules/core">
       <sourceFolder url="file://$MODULE_DIR$/../../modules/core/src/main/scala" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../modules/core/target/streams" />
-      <excludeFolder url="file://$MODULE_DIR$/../../modules/core/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
