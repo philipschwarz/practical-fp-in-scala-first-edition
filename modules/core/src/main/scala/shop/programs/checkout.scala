@@ -37,14 +37,6 @@ final class CheckoutProgram[F[_]: Background: Logger: MonadThrow: Timer](
           } yield orderId
       }
 
-  private def logError(action: String)(e: Throwable, details: RetryDetails): F[Unit] = details match {
-    case r: WillDelayAndRetry =>
-      Logger[F].error(
-        s"Failed to process $action with ${e.getMessage}. So far we have retried ${r.retriesSoFar} times."
-      )
-    case g: GivingUp => Logger[F].error(s"Giving up on $action after ${g.totalRetries} retries.")
-  }
-
   private def processPayment(payment: Payment): F[PaymentId] = {
     val action = retryingOnAllErrors[PaymentId](
       policy = retryPolicy,
@@ -75,4 +67,11 @@ final class CheckoutProgram[F[_]: Background: Logger: MonadThrow: Timer](
     bgAction(action)
   }
 
+  private def logError(action: String)(e: Throwable, details: RetryDetails): F[Unit] = details match {
+    case r: WillDelayAndRetry =>
+      Logger[F].error(
+        s"Failed to process $action with ${e.getMessage}. So far we have retried ${r.retriesSoFar} times."
+      )
+    case g: GivingUp => Logger[F].error(s"Giving up on $action after ${g.totalRetries} retries.")
+  }
 }
