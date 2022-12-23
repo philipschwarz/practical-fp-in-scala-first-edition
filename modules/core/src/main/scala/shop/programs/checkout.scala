@@ -38,7 +38,7 @@ final class CheckoutProgram[F[_]: Background: Logger: MonadThrow: Timer](
       }
 
   private def processPayment(payment: Payment): F[PaymentId] = {
-    val action = retryingOnAllErrors[PaymentId](
+    val action: F[PaymentId] = retryingOnAllErrors[PaymentId](
       policy = retryPolicy,
       onError = logError("Payments")
     )(paymentClient.process(payment))
@@ -53,7 +53,7 @@ final class CheckoutProgram[F[_]: Background: Logger: MonadThrow: Timer](
       items: List[CartItem],
       total: Money
   ): F[OrderId] = {
-    val action = retryingOnAllErrors[OrderId](
+    val action: F[OrderId] = retryingOnAllErrors[OrderId](
       policy = retryPolicy,
       onError = logError("Order")
     )(orders.create(userId, paymentId, items, total))
