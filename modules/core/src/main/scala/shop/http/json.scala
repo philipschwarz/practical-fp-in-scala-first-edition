@@ -13,9 +13,12 @@ import shop.domain.auth._
 import shop.domain.brand._
 import shop.domain.cart._
 import shop.domain.category._
+import shop.domain.checkout._
+//import shop.domain.healthcheck._
 import shop.domain.item._
 import shop.domain.order._
 import shop.domain.payment._
+//import shop.http.auth.users._
 import squants.market._
 
 object json extends JsonCodecs {
@@ -70,6 +73,9 @@ private[http] trait JsonCodecs {
   implicit val cartTotalEncoder: Encoder[CartTotal] = deriveEncoder[CartTotal]
 
   implicit val orderEncoder: Encoder[Order] = deriveEncoder[Order]
+
+  //implicit val cardDecoder: Decoder[Card] = deriveDecoder[Card]
+  implicit val cardEncoder: Encoder[Card] = deriveEncoder[Card]
 
   implicit val tokenEncoder: Encoder[JwtToken] =
     Encoder.forProduct1("access_token")(_.value)

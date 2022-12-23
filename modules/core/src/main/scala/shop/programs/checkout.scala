@@ -9,6 +9,7 @@ import retry._
 import shop.algebras._
 import shop.domain.auth.UserId
 import shop.domain.cart.{ CartItem, CartTotal }
+import shop.domain.checkout._
 import shop.domain.order._
 import shop.domain.payment._
 import shop.effects.{ Background, MonadThrow }
